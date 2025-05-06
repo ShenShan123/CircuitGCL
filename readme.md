@@ -85,7 +85,58 @@ pip install -r requirements.txt
 
 ### Dataset Preparation
 
-Place your circuit datasets in the `./datasets/` directory. The framework supports multiple SRAM circuit designs:
+#### Dataset Download Instructions
+
+The datasets used for training and testing CircuitGCL are available for download via the following links. You can use `curl` to directly download these files from the provided URLs.
+
+##### List of Datasets
+
+| Dataset Name    | Description                          | Download Link                                                                              |
+| --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+| SSRAM           | Static Random Access Memory dataset  | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/ssram.pt)           |
+| DIGITAL_CLK_GEN | Digital Clock Generator dataset      | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/digtime.pt)         |
+| TIMING_CTRL     | Timing Control dataset               | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/timing_ctrl.pt)     |
+| ARRAY_128_32    | Array with dimensions 128x32 dataset | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/array_128_32_8t.pt) |
+| ULTRA8T         | Ultra 8 Transistor dataset           | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/ultra8t.pt)         |
+| SANDWICH-RAM    | Sandwich RAM dataset                 | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/sandwich.pt)        |
+| SP8192W         | Specialized 8192 Width dataset       | [Download](https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/sp8192w.pt)         |
+
+##### Using `curl` to Download
+
+To download any of the datasets using `curl`, you can use the following command format in your terminal:
+
+```bash
+curl -O <download_link>
+```
+
+For example, to download the SSRAM dataset, you would run:
+
+```bash
+curl -O https://circuitgcl-sram.s3.ap-southeast-2.amazonaws.com/raw/ssram.pt
+```
+
+Replace `<download_link>` with the appropriate URL from the table above.
+
+##### Dataset Statistics
+
+Below is a summary of the statistics for each dataset as used in our experiments:
+
+| Split       | Dataset         | N    | NE    | #Links |
+| ----------- | --------------- | ---- | ----- | ------ |
+| Train.&Val. | SSRAM           | 87K  | 134K  | 131K   |
+| Test        | DIGITAL_CLK_GEN | 17K  | 36K   | 4K     |
+|             | TIMING_CTRL     | 18K  | 44K   | 5K     |
+|             | ARRAY_128_32    | 144K | 352K  | 110K   |
+|             | ULTRA8T         | 3.5M | 13.4M | 166K   |
+|             | SANDWICH-RAM    | 4.3M | 13.3M | 154K   |
+
+Note: The number of nodes (N), edges (NE), and links (#Links) are provided for reference to give an idea of the scale and complexity of each dataset.
+
+---
+
+#### Dataset Usage
+
+Place your circuit datasets in the `./datasets/raw/` directory. The framework supports multiple SRAM circuit designs:
 
 ```
 datasets/raw/
