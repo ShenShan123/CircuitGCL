@@ -88,11 +88,13 @@ pip install -r requirements.txt
 Place your circuit datasets in the `./datasets/` directory. The framework supports multiple SRAM circuit designs:
 
 ```
-datasets/
+datasets/raw/
 ├── ssram.pt
 ├── digtime.pt
 ├── timing_ctrl.pt
 ├── array_128_32_8t.pt
+├── ultar8t.pt
+├── sandwich.pt
 └── ...
 ```
 
@@ -182,7 +184,7 @@ Our comprehensive experiments demonstrate significant improvements over state-of
 
 #### Complete Performance Comparison Table
 
-| Testset              | \timectrl |            |            |            | \sarray   |            |            |            | \ultra    |            |            |            | \sandwich |            |            |            |
+| Testset              | timectrl  |            |            |            | array     |            |            |            | ultra     |            |            |            | sandwich  |            |            |            |
 | -------------------- | --------- | ---------- | ---------- | ---------- | --------- | ---------- | ---------- | ---------- | --------- | ---------- | ---------- | ---------- | --------- | ---------- | ---------- | ---------- |
 | **Metric**           | **Loss↓** | **MAE↓**   | **MSE↓**   | **R²↑**    | **Loss↓** | **MAE↓**   | **MSE↓**   | **R²↑**    | **Loss↓** | **MAE↓**   | **MSE↓**   | **R²↑**    | **Loss↓** | **MAE↓**   | **MSE↓**   | **R²↑**    |
 | ParaGraph            | 0.0153    | 0.0914     | 0.0153     | 0.5250     | 0.0115    | 0.0788     | 0.0115     | 0.4252     | 0.0175    | 0.0937     | 0.0175     | 0.3200     | 0.0223    | 0.1087     | 0.0223     | 0.3389     |
