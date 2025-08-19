@@ -20,6 +20,7 @@ Official implementation of the paper "Transferable Parasitic Estimation via Grap
 - [Framework Components](#framework-components)
 - [Results](#results)
 - [Citation](#citation)
+- [related links](#related-links)
 - [License](#license)
 
 ## 🔍 Overview
