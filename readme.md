@@ -260,6 +260,18 @@ If you find this work useful for your research, please consider citing:
 }
 ```
 
+## 📝 related links
+
+HugFace link
+```bash
+https://huggingface.co/papers/2507.06535
+```
+RCG link
+```bash
+https://github.com/stomlvforever/RCG
+```
+arxiv: 2507.06535
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
